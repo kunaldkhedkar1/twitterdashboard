@@ -5,9 +5,16 @@ import { createStore, applyMiddleware } from "redux";
 import rootReducer from './js/reducers'
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
-import actionWatcher from './js/sagas/hellosaga'
+import actionWatcher from './js/sagas'
 import Layout from "./js/components/container/Layout";
 import { loadState, saveState } from './js/localStorage'
+
+
+Array.prototype.move = function(from, to) {
+  this.splice(to, 0, this.splice(from, 1)[0]);
+};
+
+
 var defaultState = {
   layout: {
     options: {

@@ -3,7 +3,7 @@ export default function loading(state = [], action) {
   switch (action.type) {
     case LOADING:
       return true;
-      case FETCH_SUCCESS:
+    case FETCH_SUCCESS:
       return false;
 
     default:

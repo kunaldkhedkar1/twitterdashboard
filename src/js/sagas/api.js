@@ -1,8 +1,8 @@
 var axios = require('axios')
 export function fetchAll(accounts) {
     var url = 'http://localhost:7890/1.1/statuses/user_timeline.json';
-    var promises = Object.keys(accounts).map((account)=>{
-        return axios.get(url, {params:{screen_name:account, count: accounts[account].options.count}});
+    var promises = Object.keys(accounts).map((account) => {
+        return axios.get(url, { params: { screen_name: account, count: accounts[account].options.count } });
     })
     return Promise.all(promises).then((responses) => {
         let date = new Date();
@@ -14,6 +14,6 @@ export function fetchAll(accounts) {
             }
             return data;
         })
-    }).catch((error)=>{console.log(error);return error})
+    }).catch((error) => { console.log(error); return error })
 
 }
