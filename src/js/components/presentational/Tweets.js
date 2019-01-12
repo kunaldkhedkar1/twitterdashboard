@@ -99,7 +99,7 @@ class Tweets extends Component {
       <Typography 
         className={classes.title}
        >
-        <Icon className={classes.icon} onClick={this.openModal.bind(this)} fontSize="12">
+        <Icon className={classes.icon} onClick={this.openModal.bind(this)} fontSize="fonSize">
         settings
         </Icon>
           Tweets by <span className={classes.username}>@{username}</span>

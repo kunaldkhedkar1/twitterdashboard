@@ -24,8 +24,9 @@ var defaultState = {
     }
 };
 var persitedState = loadState();
+console.log('persistedstate', persitedState)
 var initialState = persitedState !==undefined ? persitedState : defaultState;
-initialState = defaultState
+
 
 // TODO add localstorage persit state logic
 var sagaMiddleWare = createSagaMiddleware();

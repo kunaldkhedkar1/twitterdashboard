@@ -30,11 +30,12 @@ class LayoutContainer extends Component {
         //     })
         // }
         var tweetsArray = tweets
+        console.log('tweets in main layout', tweets)
         if (!Array.isArray(tweetsArray)) tweetsArray = [];
-
+           console.log('twtarr',tweetsArray)
         return (
             <Layout>
-                {tweetsArray.map((tweetObj) => { return <Tweets username={tweetObj.username} tweets={tweetObj.tweets} 
+                {tweetsArray.map((tweetObj,index) => { console.log('tweet in layout render', tweetObj.username,index);return <Tweets username={tweetObj.username} key={index} tweets={tweetObj.tweets} 
                 reorder={this.props.reorder} /> })}
             </Layout>
         )
