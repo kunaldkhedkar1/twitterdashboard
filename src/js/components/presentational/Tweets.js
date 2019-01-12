@@ -64,7 +64,7 @@ class Tweets extends Component {
      let source = ev.dataTransfer.getData("id");
      let target = this.props.username;
      console.log('sourece-target',source, target)
-     this.props.swapOrder(source, target)
+     this.props.reorder(source, target)
   }
   openModal(e){
     this.setState({open:true},()=>{
