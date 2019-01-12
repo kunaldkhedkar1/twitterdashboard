@@ -4,14 +4,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { SvgIcon } from '@material-ui/core';
 
 const styles = {
   card: {
-    '&:hover':{
-        backgroundColor:'#f5f8fa'
+    '&:hover': {
+      backgroundColor: '#f5f8fa'
     },
     minWidth: 275,
     alignItems: 'center',
@@ -23,7 +21,7 @@ const styles = {
     boxShadow: 'none',
     borderRadius: '0',
   },
-  CardContent:{
+  CardContent: {
     paddingBottom: '0px'
   },
   title: {
@@ -37,15 +35,15 @@ const styles = {
     textAlign: 'left',
     direction: 'ltr',
   },
-  twtrlnk:{
+  twtrlnk: {
     color: 'rgb(43, 123, 185);',
   },
-  retweet:{
-    width:'100%'
+  retweet: {
+    width: '100%'
   },
   Icon: {
-    width:'10%',
-    float:'left',
+    width: '10%',
+    float: 'left',
     color: '#657786',
     fontSize: 14,
     margin: '0 6px 0 0',
@@ -53,12 +51,12 @@ const styles = {
     top: 2
   },
   retweetIcon: {
-    width:45,
-    height:26,
-    marginTop:'-16%'
+    width: 45,
+    height: 26,
+    marginTop: '-16%'
   },
-  retweetedText:{
-    width:'90%'
+  retweetedText: {
+    width: '90%'
   }
 };
 
@@ -74,21 +72,21 @@ function Tweet(props) {
       <CardContent className={classes.CardContent}>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {/* {localDate} */}
-          { data.retweeted_status && 
+          {data.retweeted_status &&
             <div className={classes.retweet}>
               <div className={classes.Icon}>
                 <img className={classes.retweetIcon} src="http://iccpic-image.oss-ap-northeast-1.aliyuncs.com/previews/d4/77/d4/reload%20repeat%20retweet%20sh.svg"></img>
               </div>
               <div className={classes.retweetedText}>
                 {data.user.name} Retweeted
-               </div> 
+               </div>
             </div>
           }
         </Typography>
         <Typography className={classes.content} fontSize="fontSize">
-         {data.text}
+          {data.text}
         </Typography>
-        <Typography style={{marginTop:'3%'}} size="small"><a className={classes.twtrlnk} href={url} target="_blank">Read More</a></Typography>
+        <Typography style={{ marginTop: '3%' }} size="small"><a className={classes.twtrlnk} href={url} target="_blank">Read More</a></Typography>
 
       </CardContent>
       <CardActions>

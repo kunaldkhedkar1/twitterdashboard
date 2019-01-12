@@ -1,14 +1,15 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Header from '../presentational/header'
-//TODO add proptypes and correct mapstatetoprops
-function mapStateToProps(){
+import { FETCH_ALL } from '../../actions'
+//TODO add proptypes and correct mapstatetoprops  add lastupdated time
+function mapStateToProps() {
   return {}
 }
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return {
-    testSaga : ()=>dispatch({type:'TEST'})
+    reloadTweets: () => dispatch({ type: FETCH_ALL })
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

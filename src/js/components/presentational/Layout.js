@@ -1,24 +1,18 @@
-import React, { Children, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import Paper from '@material-ui/core/Paper';
-import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  
+
   paper: {
     height: 140,
     width: 100,
   },
-  demo:{
+  demo: {
     backgroundColor: '#e6ecf0'
   },
   control: {
@@ -26,7 +20,7 @@ const styles = theme => ({
   },
 });
 
-class GuttersGrid extends React.Component {
+class Layout extends React.Component {
   state = {
     spacing: '16',
   };
@@ -38,19 +32,18 @@ class GuttersGrid extends React.Component {
   };
 
   render() {
-    const { classes, children } = this.props;
+    const { classes, children, col } = this.props;
     const { spacing } = this.state;
-    let size = parseInt(12/children.length);
+    let size = parseInt(12 / col);
 
     return (
       <Grid container className={classes.root} spacing={16}>
         <Grid item xs={12}>
           <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
-            {children.map((child,index) => (
+            {children.map((child, index) => (
               <Grid key={index} xs={size} item>
                 {child}
               </Grid>
-           
             ))}
           </Grid>
         </Grid>
@@ -59,8 +52,9 @@ class GuttersGrid extends React.Component {
   }
 }
 
-GuttersGrid.propTypes = {
+Layout.propTypes = {
   classes: PropTypes.object.isRequired,
+  col: PropTypes.number.isRequired
 };
 
-export default withStyles(styles)(GuttersGrid);
+export default withStyles(styles)(Layout);

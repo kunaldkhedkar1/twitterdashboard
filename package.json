@@ -30,13 +30,9 @@
     "@material-ui/core": "^3.6.1",
     "@material-ui/icons": "^3.0.1",
     "axios": "^0.18.0",
-    "exenv": "^1.2.2",
-    "react-beautiful-dnd": "^10.0.3",
     "react-redux": "^6.0.0",
-    "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-saga": "^0.16.2",
-    "scriptjs": "^2.5.9",
     "twitter-proxy": "^2.0.0"
   }
 }
