@@ -85,7 +85,7 @@ class Tweets extends Component {
   }
   render() {
     var { classes, username, tweets } = this.props;
-    console.log('tweets in Tweets',tweets)
+    console.log('tweets in Tweets',this.props)
 
     // if(isLoading)
     //  return <LinearProgress />
@@ -99,8 +99,8 @@ class Tweets extends Component {
       <Typography 
         className={classes.title}
        >
-        <Icon className={classes.icon} onClick={this.openModal.bind(this)} color='disabled' fontSize="large">
-        settings_applications
+        <Icon className={classes.icon} onClick={this.openModal.bind(this)} fontSize="12">
+        settings
         </Icon>
           Tweets by <span className={classes.username}>@{username}</span>
           

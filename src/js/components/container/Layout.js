@@ -22,12 +22,12 @@ class LayoutContainer extends Component {
     render() {
         var { layout, tweets, loading } = this.props;
         if (loading) return <CircularProgress style={{ margin: 'auto' }} />
-        if (layout.options && layout.options.order && Array.isArray(layout.options.order)) {
-            let { order } = layout.options;
-            var sortedTweets = tweets.sort((a, b) => {
-                return order.indexOf(a.username) > order.indexOf(b.username)
-            })
-        }
+        // if (layout.options && layout.options.order && Array.isArray(layout.options.order)) {
+        //     let { order } = layout.options;
+        //     var sortedTweets = tweets.sort((a, b) => {
+        //         return order.indexOf(a.username) > order.indexOf(b.username)
+        //     })
+        // }
         var tweetsArray = tweets
         if (!Array.isArray(tweetsArray)) tweetsArray = [];
 
