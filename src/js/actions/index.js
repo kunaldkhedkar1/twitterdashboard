@@ -1,0 +1,13 @@
+export const LOADING = 'LOADING';
+export const FETCH_ALL = 'FETCH_ALL';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_FAILURE = 'FETCH_FAILURE';
+export const SAVE_TWEETS_SETTINGS = 'SAVE_TWEETS_SETTINGS';
+export const UPDATE_AND_RELOAD = 'UPDATE_AND_RELOAD';
+export const SWAP_ORDER = 'SWAP_ORDER';
+export const REORDER_TWEETS = 'REORDER_TWEETS';
+
+
+
+
+
