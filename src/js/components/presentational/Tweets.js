@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import ListItemTweet from "./ListItemTweet";
 import Typography from "@material-ui/core/Typography";
 import { Icon } from "@material-ui/core";
-import SettingModal from "./settingModal";
+
 const styles = theme => ({
   main: {
     borderRadius: "2px",
@@ -22,6 +22,7 @@ const styles = theme => ({
   title: {
     fontSize: 18,
     textAlign: "center",
+    cursor: 'move',
     padding: 8,
     backgroundColor: theme.palette.background.paper,
     borderBottom: "1px solid rgba(15,70,100,.12)",
@@ -48,7 +49,6 @@ class Tweets extends Component {
   state = {
     tweets: [],
     isLoading: false,
-    open: false
   };
   onDragStart(e, user) {
     e.dataTransfer.setData("id", user);
@@ -64,11 +64,10 @@ class Tweets extends Component {
     console.log("sourece-target", source, target);
     this.props.reorder(source, target);
   }
-  openModal(e) {
-    this.setState({ open: true }, () => {});
-  }
+
   render() {
-    var { classes, username, tweets } = this.props;
+    var { classes, username, tweets, openModal } = this.props;
+    console.log('props', this.props)
     return (
       <div
         className={classes.main}
@@ -77,11 +76,10 @@ class Tweets extends Component {
         onDragOver={this.onDragOver}
         onDrop={this.onDrop.bind(this)}
       >
-        <SettingModal username={username} open={this.state.open} />
         <Typography className={classes.title}>
           <Icon
             className={classes.icon}
-            onClick={this.openModal.bind(this)}
+            onClick={openModal.bind(null,username)}
             fontSize="fonSize"
           >
             settings
