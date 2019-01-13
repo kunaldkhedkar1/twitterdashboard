@@ -66,29 +66,31 @@ const styles = theme=> {
 
 function Tweet(props) {
   const { classes, data } = props;
-  const date = data.created_at;
+  let {createdAt , isRetweet, username, text, id} = data;
+  let url = `https://twitter.com/i/web/status/${id}`
   // TODO: correctly formt date
-  let localDate = new Date(date).toLocaleString();
+  let localDate = new Date(createdAt).toLocaleString();
   // TODO: check this
-  const url = data.entities.urls[0] ? data.entities.urls[0].url : '#'
   return (
     <Card className={classes.card}>
       <CardContent className={classes.CardContent}>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
           {/* {localDate} */}
-          {data.retweeted_status &&
+          {isRetweet &&
             <div className={classes.retweet}>
               <div className={classes.Icon}>
                 <img className={classes.retweetIcon} src="http://iccpic-image.oss-ap-northeast-1.aliyuncs.com/previews/d4/77/d4/reload%20repeat%20retweet%20sh.svg"></img>
               </div>
               <div className={classes.retweetedText}>
-                {data.user.name} Retweeted
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+
+                {username} Retweeted
+        </Typography>
+
                </div>
             </div>
           }
-        </Typography>
         <Typography className={classes.content} fontSize="fontSize">
-          {data.text}
+          {text}
         </Typography>
         <Typography style={{ marginTop: '3%' }} size="small"><a className={classes.twtrlnk} href={url} target="_blank">Read More</a></Typography>
 

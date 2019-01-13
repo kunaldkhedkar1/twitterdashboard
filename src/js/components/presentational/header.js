@@ -31,7 +31,7 @@ function Header(props) {
               autorenew
           </Icon>
           </Tooltip>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
+          <Typography variant="title" color="inherit" className={classes.grow}>
             Tweets Dashboard
           </Typography>
           <SvgIcon width="24" height="24" viewBox="0 0 24 24" onClick={toggleTheme}>

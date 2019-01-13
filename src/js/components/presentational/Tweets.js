@@ -78,7 +78,6 @@ class Tweets extends Component {
           <Icon
             className={classes.icon}
             onClick={openModal.bind(null,username)}
-            fontSize="fonSize"
           >
             settings
           </Icon>
