@@ -61,13 +61,11 @@ class Tweets extends Component {
   onDrop(ev) {
     let source = ev.dataTransfer.getData("id");
     let target = this.props.username;
-    console.log("sourece-target", source, target);
     this.props.reorder(source, target);
   }
 
   render() {
     var { classes, username, tweets, openModal } = this.props;
-    console.log('props', this.props)
     return (
       <div
         className={classes.main}

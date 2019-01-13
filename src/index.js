@@ -8,6 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import actionWatcher from './js/sagas'
 import Layout from "./js/components/container/Layout";
 import { loadState, saveState } from './js/localStorage'
+import ThemeProvider from './js/themeprovider'
 
 
 Array.prototype.move = function(from, to) {
@@ -17,6 +18,7 @@ Array.prototype.move = function(from, to) {
 
 var defaultState = {
   layout: {
+    theme:'light',
     options: {
       order: ["newsycombinator", "makeschool", "ycombinator"]
     }
@@ -49,10 +51,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Fragment>
-          <Header />
-          <Layout />
-        </Fragment>
+        <ThemeProvider>
+            <Header />
+            <Layout />
+        </ThemeProvider>
       </Provider>
     );
   }

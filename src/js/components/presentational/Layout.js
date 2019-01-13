@@ -4,7 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import SettingModal from './settingModal'
 
-const styles = theme => ({
+const styles = theme => {
+    let backgroundColor = theme.palette.type === 'dark' ? 'black' : '#e6ecf0'
+  return ({
   root: {
     flexGrow: 1,
   },
@@ -14,12 +16,14 @@ const styles = theme => ({
     width: 100,
   },
   demo: {
-    backgroundColor: '#e6ecf0'
+    backgroundColor: backgroundColor
+
   },
   control: {
     padding: theme.spacing.unit * 2,
   },
-});
+})
+};
 
 class Layout extends React.Component {
   state = {

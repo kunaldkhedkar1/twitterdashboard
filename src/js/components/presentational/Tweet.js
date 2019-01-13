@@ -6,17 +6,21 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
+const styles = theme=> {
+  let themeType = theme.palette.type;
+  let hoverBg = themeType === 'dark' ? 'rgba(0,0,0,0.8)' : '#f5f8fa'
+  let contentColor = themeType === 'dark' ? 'white' : 'rgb(28, 32, 34)'
+  return({
   card: {
     '&:hover': {
-      backgroundColor: '#f5f8fa'
+      backgroundColor: hoverBg
     },
     minWidth: 275,
     alignItems: 'center',
     width: '100%',
     overflow: 'hidden',
     cursor: 'pointer',
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     borderBottom: '1px solid #e6ecf0',
     boxShadow: 'none',
     borderRadius: '0',
@@ -28,7 +32,7 @@ const styles = {
     fontSize: 14,
   },
   content: {
-    color: 'rgb(28, 32, 34)',
+    color: contentColor,
     font: '16px/1.4 Helvetica, Roboto, "Segoe UI", Calibri, sans-serif',
     lineHeight: '1.4',
     fontSize: 16,
@@ -44,7 +48,7 @@ const styles = {
   Icon: {
     width: '10%',
     float: 'left',
-    color: '#657786',
+    // color: '#657786',
     fontSize: 14,
     margin: '0 6px 0 0',
     position: 'relative',
@@ -58,7 +62,7 @@ const styles = {
   retweetedText: {
     width: '90%'
   }
-};
+})};
 
 function Tweet(props) {
   const { classes, data } = props;

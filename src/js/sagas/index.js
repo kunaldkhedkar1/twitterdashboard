@@ -10,7 +10,6 @@ function* fetchAllTweets() {
   if (data && !data.error){
     yield put({ type: FETCH_SUCCESS, payload: data });
     let layoutState = yield select(layout)
-    console.log('layout in saga', layoutState)
     yield put({ type: REORDER_TWEETS, payload: layoutState.options.order})
   }
   else
@@ -25,7 +24,6 @@ function* updateAndReload(action) {
 function* reorderTweets(action) {
   yield put({ type: LAYOUT_REORDER, payload: action.payload })
   let layoutState = yield select(layout)
-  console.log('layout in saga', layoutState)
   yield put({ type: REORDER_TWEETS, payload: layoutState.options.order})
 }
 

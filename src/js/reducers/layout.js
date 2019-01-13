@@ -1,4 +1,4 @@
-import { LAYOUT_REORDER } from "../actions";
+import { LAYOUT_REORDER, TOGGLE_THEME } from "../actions";
 
 export default function layout(state = {}, action) {
   switch (action.type) {
@@ -12,6 +12,10 @@ export default function layout(state = {}, action) {
       let { options } = state;
       options.order = order
       return Object.assign({}, state, { options })
+
+    case TOGGLE_THEME :
+       let theme = state.theme === 'dark' ? 'light' :'dark'
+       return Object.assign({},state,{theme})
     default:
       return state;
   }

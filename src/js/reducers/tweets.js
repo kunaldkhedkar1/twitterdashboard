@@ -3,7 +3,6 @@ import { FETCH_SUCCESS, REORDER_TWEETS } from "../actions";
 export default function tweets(state = [], action) {
   switch (action.type) {
     case FETCH_SUCCESS:
-      console.log("reducer payload", action.payload);
       return action.payload;
     case REORDER_TWEETS:
       let order = action.payload;

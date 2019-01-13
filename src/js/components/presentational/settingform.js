@@ -53,19 +53,16 @@ class OutlinedInputAdornments extends React.Component {
   };
 
   handleChange =  event => {
-    console.log('value of text input',event.target.value)
     this.setState({ count: event.target.value });
   };
 
   handleSubmit = (e) => {
     let {username} = this.props;
-    console.log('passing user and count', username, this.state.count)
     this.props.saveSetting(username, {count:this.state.count})
   };
 
   render() {
     const { classes, username } = this.props;
-  console.log('props', this.props)
     return (
       <div className={classes.root}>
        @{username}

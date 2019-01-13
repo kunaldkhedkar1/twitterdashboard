@@ -21,7 +21,6 @@ export default class TwitterTweetEmbed extends Component {
       return
     }
     if (!this.isMountCanceled) {
-        console.log('here!')
       window.twttr.widgets.createTweet(
         this.props.tweetId,
         this.refs.embedContainer,

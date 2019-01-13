@@ -7,9 +7,4 @@ export const UPDATE_AND_RELOAD = 'UPDATE_AND_RELOAD';
 export const LAYOUT_REORDER = 'LAYOUT_REORDER';
 export const REORDER_TWEETS = 'REORDER_TWEETS';
 export const REORDER = 'REORDER';
-
-
-
-
-
-
+export const TOGGLE_THEME = 'TOGGLE_THEME';

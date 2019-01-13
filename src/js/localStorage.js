@@ -13,7 +13,6 @@ export const loadState = () => {
 export const saveState = (state) =>{
     try{
         const serialisedState = JSON.stringify(state)
-        console.log('statein save stae', serialisedState)
         localStorage.setItem('state', serialisedState);
     }
     catch(err){
