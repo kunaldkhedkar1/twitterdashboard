@@ -4,4 +4,4 @@
 # Night mode is supported.
 #Install using
 `npm install` 
-`npm start
+`npm start`
